@@ -61,8 +61,8 @@ export const createFoodItem = async (req, res) => {
     }
 
     // Look up the restaurant owned by this logged-in user
-    const restaurant = await Restaurant.findOne({ owner: req.user._id });
-    if (!restaurant) {
+    const Restaurant = await restaurant.findOne({ owner: req.user._id });
+    if (!Restaurant) {
       return res.status(404).json({
         success: false,
         message: "Please create your restaurant profile first",
@@ -79,7 +79,7 @@ export const createFoodItem = async (req, res) => {
       isVeg,
       category,
       preparationTime,
-      restaurantId: restaurant._id, // <-- auto-attached, never trusted from body
+      restaurantId: Restaurant._id, // <-- auto-attached, never trusted from body
     });
 
     return res.status(201).json({
@@ -161,11 +161,11 @@ if (user.role !== "restaurant") {
                 message: "Restaurant not found"
             })
         }
-        const FoodItems = await foodItems.find({ restaurantId: Restaurant._id })
+        const foodItems_list = await foodItems.find({ restaurantId: Restaurant._id })
 
         return res.status(200).json({
             success: true,
-            FoodItems
+            foodItems: foodItems_list
         });
 
     } catch (error) {

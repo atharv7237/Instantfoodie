@@ -10,7 +10,7 @@ const userNavLinks = [
 ];
 
 const restaurantNavLinks = [
-  { label: "Orders", path: "/restaurant-orders", icon: <HiClipboardDocumentList size={22} /> },
+  { label: "Orders", path: "/restaurant", icon: <HiClipboardDocumentList size={22} /> },
   { label: "Menu", path: "/restaurant-menu", icon: <HiOutlineFire size={22} /> },
   { label: "Restaurant", path: "/restaurant-profile", icon: <HiUser size={22} /> },
 ];
