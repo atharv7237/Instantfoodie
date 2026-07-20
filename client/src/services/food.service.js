@@ -15,7 +15,7 @@ export async function getPublicFoodItems() {
   return data;
 }
 
-// Restaurant-only: get items belonging to logged-in restaurant
+
 export async function getMyFoodItems() {
   const { data } = await api.get("/api/foodItems/my-food");
   return data;

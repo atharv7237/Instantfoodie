@@ -13,7 +13,8 @@ const restaurantSchema = new mongoose.Schema(
       required: true,
     },
 
-    cuisine: { //1. stores the type of food the restaurant serves
+    cuisine: {
+      //1. stores the type of food the restaurant serves
       type: String,
       default: "",
       trim: true,

@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-// Connects to MongoDB Atlas using the URI from .env
 export const connectDB = async () => {
   try {
     const connectionInstance = await mongoose.connect(process.env.MONGO_URI);
@@ -9,6 +8,6 @@ export const connectDB = async () => {
     );
   } catch (error) {
     console.log("MongoDB connection failed:", error);
-    process.exit(1); // stop the server if DB fails to connect
+    process.exit(1);
   }
 };

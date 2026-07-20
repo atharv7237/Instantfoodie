@@ -16,13 +16,9 @@ import RestaurantOrders from "./pages/RestaurantOrders/RestaurantOrders";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
 import RestaurantMenu from "./pages/RestaurantMenu/RestaurantMenu";
 
-
 function App() {
   return (
     <Routes>
-
-      {/* Unprotected */}
-
       <Route path="/" element={<Login />} />
 
       <Route path="/login" element={<Login />} />
@@ -30,9 +26,6 @@ function App() {
       <Route path="/admin-login" element={<AdminLogin />} />
 
       <Route path="/signup" element={<Signup />} />
-
-
-      {/* User Protected */}
 
       <Route
         path="/home"
@@ -43,22 +36,22 @@ function App() {
         }
       />
       <Route
-  path="/restaurant-menu"
-  element={
-    <ProtectedRoute allowedRoles={["restaurant"]}>
-      <RestaurantMenu />
-    </ProtectedRoute>
-  }
-/>
+        path="/restaurant-menu"
+        element={
+          <ProtectedRoute allowedRoles={["restaurant"]}>
+            <RestaurantMenu />
+          </ProtectedRoute>
+        }
+      />
 
-<Route
-  path="/restaurant-profile"
-  element={
-    <ProtectedRoute allowedRoles={["restaurant"]}>
-      <RestaurantProfile />
-    </ProtectedRoute>
-  }
-/>
+      <Route
+        path="/restaurant-profile"
+        element={
+          <ProtectedRoute allowedRoles={["restaurant"]}>
+            <RestaurantProfile />
+          </ProtectedRoute>
+        }
+      />
 
       <Route
         path="/cart"
@@ -69,7 +62,6 @@ function App() {
         }
       />
 
-
       <Route
         path="/checkout"
         element={
@@ -78,7 +70,6 @@ function App() {
           </ProtectedRoute>
         }
       />
-
 
       <Route
         path="/order"
@@ -89,7 +80,6 @@ function App() {
         }
       />
 
-
       <Route
         path="/tracking/:orderId"
         element={
@@ -98,7 +88,6 @@ function App() {
           </ProtectedRoute>
         }
       />
-
 
       <Route
         path="/favorites"
@@ -109,7 +98,6 @@ function App() {
         }
       />
 
-
       <Route
         path="/profile"
         element={
@@ -118,7 +106,6 @@ function App() {
           </ProtectedRoute>
         }
       />
-
 
       {/* Restaurant */}
 
@@ -148,10 +135,8 @@ function App() {
           </ProtectedRoute>
         }
       />
-
     </Routes>
   );
 }
-
 
 export default App;
